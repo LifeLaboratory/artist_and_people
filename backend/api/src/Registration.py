@@ -28,7 +28,7 @@ def insert_user(user_data):
                 names.DATA: {"error_info": "Ошибка запроса к базе данных"}}
     if auth_data is not None:
         answer = auth(user_data)
-        return {names.ANSWER: errors.OK, names.DATA: answer}
+        return answer
     else:
         return {names.ANSWER: errors.SQL_EXEC,
                 names.DATA: {"error_info": "Ошибка запроса к базе данных"}}
