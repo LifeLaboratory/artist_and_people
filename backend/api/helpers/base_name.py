@@ -11,6 +11,7 @@ PASSWORD = "password"
 ID_USER = "id_user"
 NAME = "name"
 INFORMATION = "information"
+DATETIME = 'datetime'
 SURNAME = "surname"
 EMAIL = "email"
 SEX = "sex"

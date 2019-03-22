@@ -83,6 +83,36 @@ paths:
             -d '{"key": "value"}' \
             -i \
             http://hackuniversity.crabdance.com/api/v1/hello
+  /concert:
+    get:
+      tags:
+      - "auth"
+      summary: ""
+      description: "auth hello POST"
+      operationId: "auth"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/ConcertResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
 definitions:
   AuthRequest:
     type: "object"
@@ -123,4 +153,26 @@ definitions:
         properties:
           session:
             type: "string"
+  ConcertResponse:
+    type: "object"
+    properties:
+      answer:
+        type: integer
+      data:
+        type: list
+        properties:
+          id_concert:
+            type: integer
+          name:
+            type: "string"
+          datetime:
+            type: "string"
+          place:
+            type: "string"
+          id_artist:
+            type: integer
+          organizer:
+            type: "string"
+          age:
+            type: integer
     
