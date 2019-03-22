@@ -25,17 +25,53 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "Request"
+        description: "AuthRequest"
         required: true
         schema:
-          $ref: "#/definitions/Request"
-      responses:
+          $ref: "#/definitions/AuthRequest"
+      AuthResponses:
         200:
           description: "Successfully"
           schema:
-            $ref: "#/definitions/Response"
+            $ref: "#/definitions/AuthResponse"
         400:
-          description: &invalid_request_body "Bad request, request body is not valid"
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
+  /reg:
+    post:
+      tags:
+      - "auth"
+      summary: ""
+      description: "auth hello POST"
+      operationId: "auth"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "AuthRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/RegRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/RegResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
         500:
           description: &internal_server_error "Internal server error"
       x-code-samples:
@@ -48,14 +84,14 @@ paths:
             -i \
             http://hackuniversity.crabdance.com/api/v1/hello
 definitions:
-  Request:
+  AuthRequest:
     type: "object"
     properties:
       login:
         type: "string"
       password:
         type: "string"
-  Response:
+  AuthResponse:
     type: "object"
     properties:
       answer:
@@ -65,3 +101,26 @@ definitions:
         properties:
           session:
             type: "string"
+  RegRequest:
+    type: "object"
+    properties:
+      login:
+        type: "string"
+      password:
+        type: "string"
+      name:
+        type: "string"
+      information:
+        type: "string"
+        description: "статус user - пользователь, artist - артист"
+  RegResponse:
+    type: "object"
+    properties:
+      answer:
+        type: integer
+      data:
+        type: object
+        properties:
+          session:
+            type: "string"
+    
