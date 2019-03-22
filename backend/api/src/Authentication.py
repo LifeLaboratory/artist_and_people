@@ -25,5 +25,6 @@ def selectUser(user_data):
     except:
         return {names.ANSWER: errors.SQL_EXEC,
                 names.DATA: {"error_info": "Ошибка запроса к базе данных"}}
-    return {names.ANSWER: errors.OK, names.DATA: auth_data[0]}
+    auth = Sql.exec(file="api/sql/select_auth.sql", args=user_data)
+    return {names.ANSWER: errors.OK, names.DATA: auth[0]}
 

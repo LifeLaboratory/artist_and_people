@@ -10,4 +10,4 @@ from (
   limit 1
 ) nd
 where "id_user" is not null
-returning "session" as "session"
+returning "session"
