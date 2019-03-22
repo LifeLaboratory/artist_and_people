@@ -10,7 +10,7 @@ class TestStringMethods(unittest.TestCase):
             names.LOGIN: 'ralden',
             names.PASSWORD: 'ralden'
         }
-        r = s.get('http://127.0.0.1:13451/auth', data=data)
+        r = s.post('http://127.0.0.1:12451/api/v1/auth', data=data)
         #result = Gis.converter(r.text)
         #self.assertTrue(result.get(names.SESSION, None), None)
         return

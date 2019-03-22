@@ -1,5 +1,5 @@
 from route.RouteService import Auth
 
 ROUTES = {
-    Auth: '/auth',
+    Auth: '/api/v1/auth',
 }

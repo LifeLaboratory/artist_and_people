@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  title: "Test API"
+  title: "API"
   description: "test api"
   version: "1.0.0"
 host: "hackuniversity.crabdance.com"
@@ -8,16 +8,16 @@ basePath: "/api/v1"
 schemes:
   - "https"
 tags:
-- name: "test"
-  description: "Test tag"
+- name: "auth"
+  description: ""
 paths:
-  /hello:
+  /auth:
     post:
       tags:
-      - "test"
-      summary: "Hello"
-      description: "Test hello POST"
-      operationId: "hello"
+      - "auth"
+      summary: ""
+      description: "auth hello POST"
+      operationId: "auth"
       consumes:
       - "application/json"
       produces:
@@ -25,15 +25,15 @@ paths:
       parameters:
       - in: "body"
         name: "body"
-        description: "HelloRequest"
+        description: "Request"
         required: true
         schema:
-          $ref: "#/definitions/HelloRequest"
+          $ref: "#/definitions/Request"
       responses:
         200:
-          description: "Successfully replied with hello"
+          description: "Successfully"
           schema:
-            $ref: "#/definitions/HelloResponse"
+            $ref: "#/definitions/Response"
         400:
           description: &invalid_request_body "Bad request, request body is not valid"
         500:
@@ -48,15 +48,20 @@ paths:
             -i \
             http://hackuniversity.crabdance.com/api/v1/hello
 definitions:
-  HelloRequest:
+  Request:
     type: "object"
     properties:
-      key:
+      login:
         type: "string"
-        description: "Value"
-  HelloResponse:
+      password:
+        type: "string"
+  Response:
     type: "object"
     properties:
-      hello:
-        type: "string"
-        description: "Response"
+      answer:
+        type: integer
+      data:
+        type: object
+        properties:
+          session:
+            type: "string"

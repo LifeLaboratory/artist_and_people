@@ -14,6 +14,7 @@ _app.config['JSON_AS_ASCII'] = False
 api = Api(_app)
 HEADER = {'Access-Control-Allow-Origin': '*'}
 
+
 @_app.errorhandler(404)
 def not_found(error):
     return {'error': 'Not found'}, 404

@@ -22,7 +22,7 @@ class Auth(Resource):
         data[names.PASSWORD] = self.__args.get(names.PASSWORD, None)
         return data
 
-    def get(self):
+    def post(self):
         data = self.parse_data()
         answer = auth(data)
         return answer, 200, {'Access-Control-Allow-Origin': '*'}
