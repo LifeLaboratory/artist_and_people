@@ -18,11 +18,11 @@ jobs:
       - run:
           name: Deploy
           command: |
-            ssh -p 1234 life@$DEPLOY_SERVER 'cd ~/hackuniversity_logistic && git pull && cd redoc && docker-compose up -d --build'
+            ssh -p 1234 life@$DEPLOY_SERVER 'cd ~/artist_and_people && git pull && cd redoc && docker-compose up -d --build'
 
 
 workflows:
   version: 2
-  hackuniversity_deploy:
+  artist_and_people_deploy:
     jobs:
       - deploy_redoc
