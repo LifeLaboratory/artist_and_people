@@ -4,6 +4,7 @@ from route.RouteConcert import Concert
 from route.RouteFire import Fire
 from route.RouteQuestions import Quest
 from route.RouteEvents import Event
+from route.RouteTime import Time
 
 ROUTES = {
     Auth: '/api/v1/auth',
@@ -12,4 +13,5 @@ ROUTES = {
     Fire: '/api/v1/fire',
     Quest: '/api/v1/questions',
     Event: '/api/v1/event',
+    Time: '/api/v1/time',
 }

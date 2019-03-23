@@ -326,6 +326,42 @@ paths:
             -d '{"key": "value"}' \
             -i \
             http://hackuniversity.crabdance.com/api/v1/hello
+  /time:
+    get:
+      tags:
+      - "time"
+      summary: ""
+      description: "time"
+      operationId: "time"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "TimeGetRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/TimeGetRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/TimeGetResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
 definitions:
   AuthRequest:
     type: "object"
@@ -469,3 +505,18 @@ definitions:
             type: list
           members:
             type: integer
+  TimeGetRequest:
+    type: "object"
+    properties:
+      id_concert:
+        type: integer
+  TimeGetResponse:
+    type: "object"
+    properties:
+      answer:
+        type: integer
+      data:
+        type: object
+        properties:
+          time:
+            type: string

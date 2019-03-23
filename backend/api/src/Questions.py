@@ -20,3 +20,8 @@ def select_quest():
                 names.DATA: {"error_info": "Ошибка запроса к базе данных"}}
     return {names.ANSWER: errors.OK, names.DATA: auth_data}
 
+
+
+
+
+
