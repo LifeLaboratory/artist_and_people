@@ -184,6 +184,77 @@ paths:
             -d '{"key": "value"}' \
             -i \
             http://hackuniversity.crabdance.com/api/v1/hello
+  /event:
+    post:
+      tags:
+      - "event"
+      summary: ""
+      description: "event"
+      operationId: "event"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "EventPostRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/EventPostRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/EventPostResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
+    get:
+      tags:
+      - "event"
+      summary: ""
+      description: "event"
+      operationId: "event"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "EventGetRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/EventGetRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/EventGetResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
 definitions:
   AuthRequest:
     type: "object"
@@ -275,4 +346,32 @@ definitions:
           id_concert:
             type: integer
           qty:
+            type: integer
+  EventPostRequest:
+    type: "object"
+    properties:
+      description:
+        type: string
+      id_concert:
+        type: integer
+  EventGetRequest:
+    type: "object"
+    properties:
+      id_concert:
+        type: integer
+  EventGetResponse:
+    type: "object"
+    properties:
+      answer:
+        type: integer
+      data:
+        type: list
+        properties:
+          id_event:
+            type: integer
+          id_concert:
+            type: integer
+          description:
+            type: integer
+          members:
             type: integer

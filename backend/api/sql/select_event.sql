@@ -1,0 +1,1 @@
+select * from events where id_concert = '{id_concert}'

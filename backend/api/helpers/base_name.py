@@ -3,6 +3,7 @@ ERROR = "error"
 OK = "ok"
 SUCCESS = "success"
 ANSWER = "answer"
+ANSWERS = "answers"
 DESCRIPTION = "description"
 DATA = "data"
 COMPANY = "company"
@@ -35,3 +36,5 @@ ID_COMPANY = "id_company"
 SESSION = "session"
 TYPE = "type"
 ID_CONCERT = "id_concert"
+QUESTION = 'question'
+
