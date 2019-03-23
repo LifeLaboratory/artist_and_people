@@ -9,7 +9,7 @@
 
   &__item {
     margin: 0 -20px;
-    padding: 40px 25px;
+    padding: 30px 25px;
     display: block;
     position: relative;
 
@@ -64,6 +64,16 @@
   &__submit-btn {
     margin-top: 30px;
     @include default-submit-btn();
+  }
 
+  &__thanku-message {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 25px;
+    color: #f15622;
   }
 }

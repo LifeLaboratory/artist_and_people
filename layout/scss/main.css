@@ -541,7 +541,7 @@
   color: #e30713; }
 .pull__item {
   margin: 0 -20px;
-  padding: 40px 25px;
+  padding: 30px 25px;
   display: block;
   position: relative; }
   label:nth-child(2n) .pull__item {
@@ -588,6 +588,15 @@ input:checked ~ .pull__item .pull__icon:after {
   border: none;
   color: #fff;
   border-radius: 5px; }
+.pull__thanku-message {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  line-height: 25px;
+  color: #f15622; }
 
 @keyframes fire {
   0% {
@@ -639,6 +648,21 @@ input:checked ~ .pull__item .pull__icon:after {
       margin-bottom: -4px; }
     .footer-chart__title.white {
       color: #fff; }
+
+.emoji {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background-position: center; }
+  .emoji--smile {
+    background: url("../img/emoji/=).png") no-repeat;
+    background-size: contain; }
+  .emoji--poker-face {
+    background: url("../img/emoji/=l.png") no-repeat;
+    background-size: contain; }
+  .emoji--sad {
+    background: url("../img/emoji/=(.png") no-repeat;
+    background-size: contain; }
 
 @font-face {
   font-family: CorpidOT-Regular;
