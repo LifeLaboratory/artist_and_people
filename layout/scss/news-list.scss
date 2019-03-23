@@ -1,0 +1,7 @@
+@import "mixins";
+
+.news-list {
+  &__item {
+    margin-bottom: 25px;
+  }
+}
