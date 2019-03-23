@@ -1,5 +1,5 @@
 select
-       case when start > now() then "end" - now()
+       case when start < now() then "end" - now()
             else start - now()
         end::text as "time"
 from times
