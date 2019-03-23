@@ -16,13 +16,20 @@ export class ChartsComponent extends Component {
             }}>
                 <Chart
                     data={[{label: 'test', data: points}]}
-                    brush="#eaf0f6"
+                    brush={{style: {color:'#fff'}}}
+                    series={{ type: 'area' }}
                     axes={[
-                        {primary: true, type: "linear", position: "bottom"},
-                        {type: "linear", position: "left", stacked: true}
+                        { primary: true, position: 'bottom', type: 'time' },
+                        { position: 'left', type: 'linear', stacked: true },
                     ]}
+                    getSeriesStyle={series => ({
+                        color: `#f58864`
+                    })}
+                    primaryCursor
+                    secondaryCursor
+                    tooltip
                 />
-                <span>150</span>
+
             </div>
         )
     }
