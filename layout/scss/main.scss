@@ -10,6 +10,7 @@
 @import "news-list";
 @import "monitoring";
 @import "ticket";
+@import "pull";
 
 @font-face {
   font-family: CorpidOT-Regular;
@@ -45,4 +46,8 @@ html, body {
 
 .canvasjs-chart-credit {
   display: none !important;
+}
+
+.radio-btn {
+
 }
