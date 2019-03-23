@@ -28,7 +28,7 @@ class Auth(Resource):
             answer = auth(data)
             return answer, 200, {'Access-Control-Allow-Origin': '*'}
         except:
-            return {}, 400, {'Access-Control-Allow-Origin': '*'}
+            return {}, 401, {'Access-Control-Allow-Origin': '*'}
 
     def option(self):
         return "OK", errors.OK, {'Access-Control-Allow-Origin': '*'}
