@@ -8,6 +8,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="scss/main.css">
+
 </head>
 <body>
 
@@ -19,11 +20,27 @@
 </header>
 
 <div class="content-container">
+    <div class="monitoring ">
+
+        <div class="monitoring__count">
+            <div class="monitoring__count"><span>1325</span></div>
+        </div>
+
+
+        <div id="chartContainer" class="monitoring__chart" style="height: 370px;"></div>
+
+        <div class="monitoring__fire"></div>
+
+    </div>
+
+
     <div class="fire-block disabled-block">
-        <div class="fire-block__count">1325</div>
-        <div class="fire-button fire-block__button">
+        <div class="fire-block__count"><span>1325</span></div>
+        <div id="fire" class="fire-button fire-block__button">
             <div class="fire-button__title">Fire!</div>
         </div>
+
+        <div class="fire-block__fire"></div>
     </div>
 
 
@@ -59,7 +76,7 @@
     </div>
 
 
-    <div class="performance ">
+    <div class="performance disabled-block">
         <div class="performance__title">Флешмоб Nyan Cat</div>
         <div class="performance__visual">
             <iframe width="100%" height="200" src="https://www.youtube.com/embed/wZZ7oFKsKzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -73,7 +90,13 @@
     </div>
 
 
+
+
 </div>
+
+
+
+
 
 <footer class="footer-menu">
     <div class="footer-menu__item footer-menu__item--text"></div>
@@ -82,6 +105,11 @@
     <div class="footer-menu__item footer-menu__item--performance"></div>
     <div class="footer-menu__item footer-menu__item--emergency"></div>
 </footer>
+
+<script src="js/canvasjs.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

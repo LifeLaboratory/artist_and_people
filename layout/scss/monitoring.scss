@@ -1,0 +1,23 @@
+@import "mixins";
+
+.monitoring {
+  &__chart {
+    margin: 0 -20px;
+  }
+
+  &__count {
+    @include count();
+  }
+
+  &__fire {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    left: 0;
+    background-size: 100%;
+    background-position: center;
+    background: url("../img/fire_bg.png") no-repeat;
+  }
+}

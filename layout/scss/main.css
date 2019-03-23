@@ -2,7 +2,8 @@
   height: 65px;
   border-bottom: 1px solid #f3979c;
   -webkit-box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.0784313725);
-          box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.0784313725); }
+          box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.0784313725);
+  background-color: #fff; }
   .header__buttons-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -129,6 +130,28 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+@-webkit-keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .fire-block {
   margin-top: 25px; }
   .fire-block__count {
@@ -136,12 +159,44 @@
     color: #f15522;
     font-family: Arial, sans-serif;
     text-align: center;
-    margin-bottom: 56px; }
+    margin-bottom: 56px;
+    position: relative; }
+    .fire-block__count span {
+      display: inline-block;
+      position: relative; }
+      .fire-block__count span:before {
+        position: absolute;
+        left: -30px;
+        top: 10px;
+        content: '';
+        width: 20px;
+        height: 30px;
+        display: block;
+        background: url("../img/fire-orange.png") no-repeat;
+        background-size: contain; }
+    .fire-block__count.fire {
+      -webkit-animation: fire .3s;
+              animation: fire .3s;
+      -webkit-animation-direction: alternate;
+              animation-direction: alternate;
+      -webkit-animation-iteration-count: infinite;
+              animation-iteration-count: infinite; }
   .fire-block__button {
     margin: 0 auto; }
     .fire-block__button.trigger {
       -webkit-animation: triggered 1s;
               animation: triggered 1s; }
+  .fire-block__fire {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: linear-gradient(114deg, #f15922, #ed1d24);
+    z-index: -1;
+    left: 0;
+    opacity: 0;
+    -webkit-transition: opacity .5s linear;
+    transition: opacity .5s linear; }
 
 .song-text__title {
   font-family: CorpidOT-Regular, sans-serif;
@@ -236,6 +291,46 @@
 .news-list__item {
   margin-bottom: 25px; }
 
+.monitoring__chart {
+  margin: 0 -20px; }
+.monitoring__count {
+  font-size: 48px;
+  color: #f15522;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 56px;
+  position: relative; }
+  .monitoring__count span {
+    display: inline-block;
+    position: relative; }
+    .monitoring__count span:before {
+      position: absolute;
+      left: -30px;
+      top: 10px;
+      content: '';
+      width: 20px;
+      height: 30px;
+      display: block;
+      background: url("../img/fire-orange.png") no-repeat;
+      background-size: contain; }
+  .monitoring__count.fire {
+    -webkit-animation: fire .3s;
+            animation: fire .3s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
+.monitoring__fire {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  left: 0;
+  background-size: 100%;
+  background-position: center;
+  background: url("../img/fire_bg.png") no-repeat; }
+
 @font-face {
   font-family: CorpidOT-Regular;
   src: url("../fonts/CorpidOT-Regular.otf") format("opentype"); }
@@ -250,7 +345,10 @@ html, body {
 
 .content-container {
   padding: 30px 20px 80px;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  height: calc(100% - 130px);
+  position: absolute;
+  width: 100%; }
 
 .disabled-block {
   display: none; }
