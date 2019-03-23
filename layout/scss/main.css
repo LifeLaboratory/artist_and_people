@@ -21,6 +21,11 @@
     .header__item--user {
       background: url("../img/icons/user.svg") no-repeat center;
       background-size: 40%; }
+    .header__item--back-link {
+      background: url("../img/icons/right-arrow.svg") no-repeat center;
+      background-size: 40%;
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg); }
 
 .auth-form__title {
   font-size: 24px;
