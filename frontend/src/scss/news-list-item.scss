@@ -1,0 +1,97 @@
+@import "mixins";
+
+.news-list-item {
+  width: 100%;
+  border: 1px solid #f1888f;
+  border-radius: 5px;
+  background: linear-gradient(114deg, #fef6f4, #fef4f4);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  box-shadow: 0 0 15px 3px rgba(227, 7, 19, 0.15);
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(227, 9, 24, 0), rgba(227, 9, 24, 1));
+    bottom: 0;
+    opacity: .12;
+    z-index: 5;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 24px;
+    height: 39px;
+    background: url("../img/fire.png");
+    background-size: contain;
+    opacity: .1;
+  }
+
+  &__photo {
+    width: 100px;
+    height: 110%;
+    object-fit: contain;
+    object-position: center;
+    margin-left: 10px;
+  }
+
+  &__name {
+    color: #ee1d23;
+    margin-bottom: 10px;
+  }
+
+  &__info-wrapper {
+    margin-left: 20px;
+  }
+
+  &__date, &__place {
+    margin-bottom: 10px;
+    font-size: 13px;
+
+    &:before {
+      content: '';
+      width: 15px;
+      height: 15px;
+      background-repeat: no-repeat;
+      padding-left: 25px;
+      background-size: contain;
+    }
+  }
+
+  &__date {
+    &:before {
+      background: url("../img/icons/calendar.svg") no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__place {
+    &:before {
+      background: url("../img/icons/place.svg") no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__graphic {
+    height: 100px;
+    margin-top: -20px;
+    width: 100%;
+    display: block;
+    //background: url("../img/graphic-1.png") no-repeat bottom;
+    //background-size: contain;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
