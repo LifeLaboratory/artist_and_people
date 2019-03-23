@@ -13,6 +13,7 @@ window.onload = function () {
     var dps = []; // dataPoints
     var chart = new CanvasJS.Chart("chartContainer", {
         colorSet:  "greenShades",
+        backgroundColor: "transparent",
         axisY: {
             includeZero: false,
             lineColor: '#f25b57',

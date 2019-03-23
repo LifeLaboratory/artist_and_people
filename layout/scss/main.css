@@ -1,3 +1,36 @@
+@-webkit-keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .header {
   height: 65px;
   border-bottom: 1px solid #f3979c;
@@ -28,6 +61,17 @@
       -webkit-transform: rotate(-180deg);
               transform: rotate(-180deg); }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .auth-form__title {
   font-size: 24px;
   margin-bottom: 55px; }
@@ -48,6 +92,17 @@
   color: #fff;
   border-radius: 5px; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .footer-menu {
   position: fixed;
   z-index: 11;
@@ -86,6 +141,17 @@
       background: url("../img/icons/perfomance.png") no-repeat center;
       background-size: 75%; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .fire-button {
   width: 220px;
   height: 220px;
@@ -109,38 +175,6 @@
     bottom: 20px;
     width: 100%; }
 
-@-webkit-keyframes triggered {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1); }
-  25% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-
-@keyframes triggered {
-  0% {
-    -webkit-transform: scale(1);
-            transform: scale(1); }
-  25% {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2); }
-  100% {
-    -webkit-transform: scale(1);
-            transform: scale(1); } }
-@-webkit-keyframes fire {
-  0% {
-    color: #fff; }
-  25% {
-    color: #f15922; }
-  50% {
-    color: #fff; }
-  75% {
-    color: #ed1d24; }
-  100% {
-    color: #fff; } }
 @keyframes fire {
   0% {
     color: #fff; }
@@ -152,6 +186,26 @@
     color: #ed1d24; }
   100% {
     color: #fff; } }
+@-webkit-keyframes triggered {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  25% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+@keyframes triggered {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  25% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
 .fire-block {
   margin-top: 25px; }
   .fire-block__count {
@@ -167,7 +221,7 @@
       .fire-block__count span:before {
         position: absolute;
         left: -30px;
-        top: 10px;
+        top: 11px;
         content: '';
         width: 20px;
         height: 30px;
@@ -198,11 +252,33 @@
     -webkit-transition: opacity .5s linear;
     transition: opacity .5s linear; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .song-text__title {
   font-family: CorpidOT-Regular, sans-serif;
   font-size: 24px;
   color: #ee1d23; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .performance__title {
   font-size: 24px;
   color: #ee1d23;
@@ -213,6 +289,17 @@
 .performance__description {
   margin-top: 15px; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .news-list-item {
   width: 100%;
   border: 1px solid #f1888f;
@@ -288,9 +375,45 @@
       -o-object-fit: contain;
          object-fit: contain; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
 .news-list__item {
   margin-bottom: 25px; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
+@-webkit-keyframes fireImpulse {
+  0% {
+    opacity: .5; }
+  50% {
+    opacity: .4; }
+  100% {
+    opacity: .5; } }
+@keyframes fireImpulse {
+  0% {
+    opacity: .5; }
+  50% {
+    opacity: .4; }
+  100% {
+    opacity: .5; } }
 .monitoring__chart {
   margin: 0 -20px; }
 .monitoring__count {
@@ -306,7 +429,7 @@
     .monitoring__count span:before {
       position: absolute;
       left: -30px;
-      top: 10px;
+      top: 11px;
       content: '';
       width: 20px;
       height: 30px;
@@ -323,13 +446,21 @@
 .monitoring__fire {
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
+  background: linear-gradient(114deg, #f15922, #ed1d24);
   top: 0;
   z-index: -1;
   left: 0;
-  background-size: 100%;
-  background-position: center;
-  background: url("../img/fire_bg.png") no-repeat; }
+  opacity: 0;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear; }
+  .monitoring__fire.max {
+    -webkit-animation: fireImpulse .3s;
+            animation: fireImpulse .3s;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
 
 @font-face {
   font-family: CorpidOT-Regular;
@@ -352,5 +483,8 @@ html, body {
 
 .disabled-block {
   display: none; }
+
+.canvasjs-chart-credit {
+  display: none !important; }
 
 /*# sourceMappingURL=main.css.map */
