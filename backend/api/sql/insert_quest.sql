@@ -1,3 +1,3 @@
 INSERT INTO questions (quest, answers)
-VALUES ('{login}', '{password}')
+VALUES ('{quest}', '{answers}')
 returning id_quest

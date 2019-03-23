@@ -255,6 +255,77 @@ paths:
             -d '{"key": "value"}' \
             -i \
             http://hackuniversity.crabdance.com/api/v1/hello
+  /questions:
+    post:
+      tags:
+      - "questions"
+      summary: ""
+      description: "questions"
+      operationId: "questions"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "QuestionPostRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/QuestionPostRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/QuestionPostResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
+    get:
+      tags:
+      - "questions"
+      summary: ""
+      description: "questions"
+      operationId: "questions"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "QuestionGetRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/QuestionGetRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/QuestionGetResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
 definitions:
   AuthRequest:
     type: "object"
@@ -373,5 +444,28 @@ definitions:
             type: integer
           description:
             type: integer
+          members:
+            type: integer
+  QuestionsPostRequest:
+    type: "object"
+    properties:
+      question:
+        type: string
+      answers:
+        type: list
+  QuestionsGetResponse:
+    type: "object"
+    properties:
+      answer:
+        type: integer
+      data:
+        type: list
+        properties:
+          id_quest:
+            type: integer
+          quest:
+            type: integer
+          answers:
+            type: list
           members:
             type: integer
