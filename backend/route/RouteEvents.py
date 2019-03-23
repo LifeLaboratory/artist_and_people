@@ -23,14 +23,20 @@ class Event(Resource):
         return data
 
     def post(self):
-        data = self.parse_data()
-        answer = event(data)
-        return answer, 200, {'Access-Control-Allow-Origin': '*'}
+        try:
+            data = self.parse_data()
+            answer = event(data)
+            return answer, 200, {'Access-Control-Allow-Origin': '*'}
+        except:
+            return {}, 400, {'Access-Control-Allow-Origin': '*'}
 
     def get(self):
-        data = self.parse_data()
-        answer = get_event(data)
-        return answer, 200, {'Access-Control-Allow-Origin': '*'}
+        try:
+            data = self.parse_data()
+            answer = get_event(data)
+            return answer, 200, {'Access-Control-Allow-Origin': '*'}
+        except:
+            return {}, 400, {'Access-Control-Allow-Origin': '*'}
 
     def option(self):
         return "OK", errors.OK, {'Access-Control-Allow-Origin': '*'}
