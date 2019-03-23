@@ -50,10 +50,10 @@ paths:
   /reg:
     post:
       tags:
-      - "auth"
+      - "reg"
       summary: ""
-      description: "auth hello POST"
-      operationId: "auth"
+      description: "re hello POST"
+      operationId: "reg"
       consumes:
       - "application/json"
       produces:
@@ -86,9 +86,9 @@ paths:
   /concert:
     get:
       tags:
-      - "auth"
+      - "concert"
       summary: ""
-      description: "auth hello POST"
+      description: "concert"
       operationId: "auth"
       consumes:
       - "application/json"
@@ -100,6 +100,77 @@ paths:
           description: "Successfully"
           schema:
             $ref: "#/definitions/ConcertResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
+  /fire:
+    post:
+      tags:
+      - "fire"
+      summary: ""
+      description: "fire"
+      operationId: "fire"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "FirePostRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/FirePostRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/FirePostResponse"
+        400:
+          description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
+        500:
+          description: &internal_server_error "Internal server error"
+      x-code-samples:
+        - lang: 'cURL'
+          source: |
+            curl \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d '{"key": "value"}' \
+            -i \
+            http://hackuniversity.crabdance.com/api/v1/hello
+    get:
+      tags:
+      - "fire"
+      summary: ""
+      description: "fire"
+      operationId: "fire"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "FireGetRequest"
+        required: true
+        schema:
+          $ref: "#/definitions/FireGetRequest"
+      AuthResponses:
+        200:
+          description: "Successfully"
+          schema:
+            $ref: "#/definitions/FireGetResponse"
         400:
           description: &invalid_AuthRequest_body "Bad AuthRequest, AuthRequest body is not valid"
         500:
@@ -175,4 +246,33 @@ definitions:
             type: "string"
           age:
             type: integer
-    
+  FirePostRequest:
+    type: "object"
+    properties:
+      session:
+        type: string
+      id_concert:
+        type: integer
+  FireGetRequest:
+    type: "object"
+    properties:
+      session:
+        type: string
+      id_concert:
+        type: integer
+  FireGetResponse:
+    type: "object"
+    properties:
+      answer:
+        type: integer
+      data:
+        type: list
+        properties:
+          id_fire:
+            type: integer
+          id_user:
+            type: integer
+          id_concert:
+            type: integer
+          qty:
+            type: integer
