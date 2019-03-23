@@ -28,7 +28,7 @@ function fireRate() {
     if (k > 0.8) {
         countElement.classList.add('fire');
     } else {
-        countElement.classList.remove('fire');
+        countElement.classList.remove('fir  e');
     }
 }
 
@@ -40,8 +40,6 @@ function ratingCounter() {
 
         fireRate();
     }, 500);
-
-
 }
 
 ratingCounter();

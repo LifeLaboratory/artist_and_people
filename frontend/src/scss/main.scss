@@ -9,6 +9,9 @@
 @import "news-list-item";
 @import "news-list";
 @import "monitoring";
+@import "ticket";
+@import "pull";
+@import "footer-chart";
 
 @font-face {
   font-family: CorpidOT-Regular;
@@ -21,7 +24,6 @@
 }
 
 html, body {
-  // font-family: CorpidOT-Regular, sans-serif;
   font-family: Arial, sans-serif;
   padding: 0;
   margin: 0;
@@ -33,12 +35,20 @@ html, body {
   height: calc(100% - 130px);
   position: absolute;
   width: 100%;
+
+  &__title {
+    font-size: 14px;
+  }
 }
 
 .disabled-block {
   display: none;
 }
 
-.chartContainer {
+.canvasjs-chart-credit {
+  display: none !important;
+}
+
+.radio-btn {
 
 }

@@ -1,5 +1,15 @@
 $gray-color: #e4e5e6;
 
+@mixin default-submit-btn {
+  width: 100%;
+  line-height: 48px;
+  padding: 0 20px;
+  background-color: #ff0000;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+}
+
 @mixin count {
   font-size: 48px;
   color: #f15522;
@@ -15,7 +25,7 @@ $gray-color: #e4e5e6;
     &:before {
       position: absolute;
       left: -30px;
-      top: 10px;
+      top: 11px;
       content: '';
       width: 20px;
       height: 30px;
@@ -25,10 +35,27 @@ $gray-color: #e4e5e6;
     }
   }
 
-
   &.fire {
     animation: fire .3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+  }
+}
+
+@keyframes fire {
+  0% {
+    color: #fff
+  }
+  25% {
+    color: #f15922
+  }
+  50% {
+    color: #fff
+  }
+  75% {
+    color: #ed1d24
+  }
+  100% {
+    color: #fff;
   }
 }
