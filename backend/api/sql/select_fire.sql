@@ -1,3 +1,7 @@
-select * from fire f
-join session s on s.id_user = f.id_user
-where "session" = '{session}'
+select
+max(time) as time
+, sum(time_int)::integer as count
+from fire
+where id_concert = 1
+group by to_char(time, 'HH:MI:SS')
+order by time

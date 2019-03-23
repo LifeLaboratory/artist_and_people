@@ -8,17 +8,21 @@ import json
 from flask import jsonify
 from flask import json
 
+HEADER = {"Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With",
+           "Access-Control-Allow-Methods": "GET, PUT, POST"}
+
 
 class Fire(Resource):
     def __init__(self):
         self.__parser = reqparse.RequestParser()
-        self.__parser.add_argument(names.SESSION)
+        self.__parser.add_argument(names.ID_USER)
         self.__parser.add_argument(names.ID_CONCERT)
         self.__args = self.__parser.parse_args()
 
     def parse_data(self):
         data = dict()
-        data[names.SESSION] = self.__args.get(names.SESSION, None)
+        data[names.ID_USER] = self.__args.get(names.ID_USER, None)
         data[names.ID_CONCERT] = self.__args.get(names.ID_CONCERT, None)
         return data
 
@@ -26,17 +30,20 @@ class Fire(Resource):
         try:
             data = self.parse_data()
             answer = select_fire(data)
-            return answer, 200, {'Access-Control-Allow-Origin': '*'}
+            return answer, 200, HEADER
         except:
-            return {}, 400, {'Access-Control-Allow-Origin': '*'}
+            return {}, 400, HEADER
 
     def post(self):
         try:
             data = self.parse_data()
             answer = fire(data)
-            return answer, 200, {'Access-Control-Allow-Origin': '*'}
+            return answer, 200, HEADER
         except:
-            return {}, 400, {'Access-Control-Allow-Origin': '*'}
+            return {}, 400, HEADER
 
     def option(self):
-        return "OK", errors.OK, {'Access-Control-Allow-Origin': '*'}
+        return "OK", 200, HEADER
+
+    def options(self):
+        return "OK", 200, HEADER

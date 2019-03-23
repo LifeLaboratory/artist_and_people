@@ -128,8 +128,8 @@ class Sql:
             print(psycopg2.errorcodes.lookup(e.pgcode))
         finally:
             try:
-                result = current_connect.fetchall()
                 connect.commit()
+                result = current_connect.fetchall()
             except:
                 connect.rollback()
             finally:
