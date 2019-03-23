@@ -1,0 +1,30 @@
+@import 'mixins';
+
+.footer-chart {
+  position: fixed;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
+  background-color: $gray-color;
+  box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.07);
+
+  &__progress {
+    background: linear-gradient(114deg, #f15922, #ed1d24);
+    height: 100%;
+    transition: width .5s;
+  }
+
+  &__title {
+    color: #000000;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    transition: opacity .25s;
+
+    &.white {
+      color: #fff;
+    }
+  }
+}

@@ -1,5 +1,17 @@
 @import "mixins";
 
+@keyframes fireImpulse {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: .4;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+
 .monitoring {
   &__chart {
     margin: 0 -20px;
@@ -12,12 +24,18 @@
   &__fire {
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
+    background: linear-gradient(114deg, #f15922, #ed1d24);
     top: 0;
     z-index: -1;
     left: 0;
-    background-size: 100%;
-    background-position: center;
-    background: url("../img/fire_bg.png") no-repeat;
+    opacity: 0;
+    transition: opacity .5s linear;
+
+    &.max {
+      animation: fireImpulse .3s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+    }
   }
 }
