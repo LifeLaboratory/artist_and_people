@@ -587,6 +587,42 @@ input:checked ~ .pull__item .pull__icon:after {
   color: #fff;
   border-radius: 5px; }
 
+@keyframes fire {
+  0% {
+    color: #fff; }
+  25% {
+    color: #f15922; }
+  50% {
+    color: #fff; }
+  75% {
+    color: #ed1d24; }
+  100% {
+    color: #fff; } }
+.footer-chart {
+  position: fixed;
+  height: 60px;
+  bottom: 0;
+  width: 100%;
+  z-index: 11;
+  background-color: #e4e5e6;
+  -webkit-box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.07);
+          box-shadow: 0 0 10px 1px rgba(255, 0, 0, 0.07); }
+  .footer-chart__progress {
+    background: linear-gradient(114deg, #f15922, #ed1d24);
+    height: 100%;
+    -webkit-transition: width .5s;
+    transition: width .5s; }
+  .footer-chart__title {
+    color: #000000;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    line-height: 60px;
+    -webkit-transition: opacity .25s;
+    transition: opacity .25s; }
+    .footer-chart__title.white {
+      color: #fff; }
+
 @font-face {
   font-family: CorpidOT-Regular;
   src: url("../fonts/CorpidOT-Regular.otf") format("opentype"); }
