@@ -18,4 +18,4 @@ def fire(sql_data):
         data = Sql.exec(file="api/sql/insert_fire.sql", args=sql_data)
     else:
         data = Sql.exec(file="api/sql/update_fire.sql", args=sql_data)
-    return {names.ANSWER: errors.OK, names.DATA: 200}
+    return {names.ANSWER: errors.OK, names.DATA: data[0]}
