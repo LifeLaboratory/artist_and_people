@@ -431,6 +431,11 @@ definitions:
         type: string
       id_concert:
         type: integer
+  FirePostResponce:
+    type: "object"
+    properties:
+      answer:
+        type: integer
   FireGetRequest:
     type: "object"
     properties:
@@ -461,6 +466,11 @@ definitions:
         type: string
       id_concert:
         type: integer
+  EventPostResponce:
+    type: "object"
+    properties:
+      answer:
+        type: integer
   EventGetRequest:
     type: "object"
     properties:
@@ -489,6 +499,11 @@ definitions:
         type: string
       answers:
         type: list
+  QuestionsPostResponce:
+    type: "object"
+    properties:
+      answer:
+        type: integer
   QuestionsGetResponse:
     type: "object"
     properties:
