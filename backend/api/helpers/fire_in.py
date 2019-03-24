@@ -19,11 +19,11 @@ def fire():
     group by to_char(time, 'HH:MI:SS') 
     order by time desc limit 1
     """)[0]['sum'] - 1
+        if sql_data['time_int'] < 0:
+            sql_data['time_int'] = 0
+        datas = Sql.exec(file="D:/artist_and_people/backend/api/sql/insert_fire.sql", args=sql_data)
     except:
         print('alarm')
-    if sql_data['time_int'] < 0:
-        sql_data['time_int'] = 0
-    datas = Sql.exec(file="D:/artist_and_people/backend/api/sql/insert_fire.sql", args=sql_data)
     return
 
 
