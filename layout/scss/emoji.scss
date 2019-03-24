@@ -1,0 +1,23 @@
+@import "mixins";
+
+.emoji {
+  width: 32px;
+  height: 32px;
+  display: block;
+  background-position: center;
+
+  &--smile {
+    background: url("../img/emoji/=).png") no-repeat;
+    background-size: contain;
+  }
+
+  &--poker-face {
+    background: url("../img/emoji/=l.png") no-repeat;
+    background-size: contain;
+  }
+
+  &--sad {
+    background: url("../img/emoji/=(.png") no-repeat;
+    background-size: contain;
+  }
+}

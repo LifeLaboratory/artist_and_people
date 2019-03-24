@@ -2,13 +2,13 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {FireComponent} from "../components/FireComponent";
 import fetch from "cross-fetch"
+import {bindActionCreators} from "redux";
+import * as ActionTypes from "../constants/ActionTypes";
 
 class FireContainer extends Component {
     constructor(props) {
         super(props)
 
-        // const {dispatch} = props
-        // this.action = bindActionCreators(ActionCreator, dispatch)
         this.state = {clicked: true, count: 0, lastClickDate: null, rating: 0, aura: false}
         this.onFireClick = this.onFireClick.bind(this)
     }
@@ -17,7 +17,6 @@ class FireContainer extends Component {
         this.intervalId = setInterval(() => {
             this.setState(prevState => ({rating: prevState.rating > 0 ? prevState.rating - 0.1 : 0}));
         }, 500);
-        // store intervalId in the state so it can be accessed later:
     }
 
     componentWillUnmount() {
@@ -37,9 +36,11 @@ class FireContainer extends Component {
             return response.json()
         }).then(json => {
             const {data} = json
-            const {count} = data
+            const {count, progress, allCount} = data
             this.setState({
-                count: count
+                count,
+                progress,
+                overallCount: allCount
             })
         })
             .catch(e => this.text = e)
@@ -65,12 +66,22 @@ class FireContainer extends Component {
     }
 
     render() {
+        const {dispatch} = this.props
+
         return (<FireComponent
             clicked={this.state.clicked}
             rating={this.state.rating}
             count={this.state.count}
             text={this.text}
-            onClick={this.onFireClick}/>)
+            onClick={this.onFireClick}
+            progress={this.state.progress}
+            overallCount={this.state.overallCount}
+            actions={{
+                goBack: bindActionCreators(() => ({
+                    type: ActionTypes.GO_BACK,
+                }), dispatch)
+            }}
+        />)
     }
 }
 

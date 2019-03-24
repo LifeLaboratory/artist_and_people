@@ -1,3 +1,7 @@
 export const TRY_LOGIN = "TRY_LOGIN"
 export const LOGIN_FAILED = "LOGIN_FAILED"
 export const LOGIN_SUCCEEDED = "LOGIN_SUCCEEDED"
+export const OPEN_FIRE = "OPEN_FIRE"
+export const OPEN_POLL = "OPEN_POLL"
+export const OPEN_EVENTS = "OPEN_EVENTS"
+export const GO_BACK = "GO_BACK"

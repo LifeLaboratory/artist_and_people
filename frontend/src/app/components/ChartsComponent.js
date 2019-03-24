@@ -7,23 +7,44 @@ export class ChartsComponent extends Component {
     }
 
     render() {
-        const {points} = this.props
+        const {points, actions} = this.props
 
         return (
-            <div style={{
-                width: "600px",
-                height: "400px"
-            }}>
-                <Chart
-                    data={[{label: 'test', data: points}]}
-                    brush="#eaf0f6"
-                    axes={[
-                        {primary: true, type: "linear", position: "bottom"},
-                        {type: "linear", position: "left", stacked: true}
-                    ]}
-                />
-                <span>150</span>
+            <div>
+                <header className="header">
+                    <div className="header__buttons-container">
+                        <div className="header__item header__item--back-link"></div>
+                        <div className="header__item header__item--user"></div>
+                    </div>
+                </header>
+                <div style={{
+                    width: "600px",
+                    height: "400px"
+                }}>
+
+                    <Chart
+                        data={[{label: 'test', data: points}]}
+                        brush={{style: {color:'#fff'}}}
+                        series={{ type: 'area' }}
+                        axes={[
+                            { primary: true, position: 'bottom', type: 'time' },
+                            { position: 'left', type: 'linear', stacked: true },
+                        ]}
+                        getSeriesStyle={series => ({
+                            color: `#f58864`
+                        })}
+                        primaryCursor
+                        secondaryCursor
+                        tooltip
+                    />
+
+                </div>
+                <div className="footer-chart">
+                    <div className="footer-chart__title">1000</div>
+                    <div className="footer-chart__progress"></div>
+                </div>
             </div>
+
         )
     }
 }
