@@ -6,13 +6,14 @@ export class PollComponent extends Component {
     }
 
     render() {
-        const {poll, answer} = this.props
+        const {poll, answer, actions} = this.props
+        const {goBack} = actions
 
         return (
             <div>
                 <header className="header">
                     <div className="header__buttons-container">
-                        <div className="header__item header__item--back-link"></div>
+                        <div className="header__item header__item--back-link" onClick={() => goBack()}></div>
                         <div className="header__item header__item--user"></div>
                     </div>
                 </header>

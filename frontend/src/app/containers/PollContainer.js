@@ -1,7 +1,7 @@
 import React, {Component} from "react"
-import {connect} from "react-redux"
 import {PollComponent} from "../components/PollComponent";
 import {bindActionCreators} from "redux";
+import {connect} from 'react-redux'
 import * as ActionTypes from "../constants/ActionTypes";
 
 class PollContainer extends Component {
@@ -66,7 +66,18 @@ class PollContainer extends Component {
     }
 
     render() {
-        return (<PollComponent poll={this.polls[this.state.pollId]} answer={this.nextQuestion}/>)
+        const {dispatch} = this.props
+
+        return (<PollComponent
+            poll={this.polls[this.state.pollId]}
+            answer={this.nextQuestion}
+            actions={{
+                goBack: bindActionCreators(() => ({
+                    type: ActionTypes.GO_BACK,
+                }), dispatch)
+            }}
+
+        />)
     }
 }
 
