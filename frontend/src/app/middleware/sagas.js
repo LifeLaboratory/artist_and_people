@@ -11,6 +11,10 @@ function* tryOpenEvents() {
     yield put(push('/events'))
 }
 
+function* tryOpenPoll() {
+    yield put(push('/poll'))
+}
+
 function* tryGoBack() {
     yield put(goBack())
 }
@@ -19,5 +23,6 @@ function* tryGoBack() {
 export default function* mySaga() {
     yield takeEvery(ActionTypes.TRY_LOGIN, tryOpenEvents);
     yield takeEvery(ActionTypes.OPEN_FIRE, tryOpenFire);
+    yield takeEvery(ActionTypes.OPEN_POLL, tryOpenPoll);
     yield takeEvery(ActionTypes.GO_BACK, tryGoBack);
 }

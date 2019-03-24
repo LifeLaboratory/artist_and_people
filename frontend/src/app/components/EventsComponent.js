@@ -7,13 +7,13 @@ export class EventsComponent extends Component {
 
     render() {
         const {actions} = this.props
-        const {openFire} = actions
+        const {openPoll} = actions
 
         return (
             <div className="content-container">
                 <div className="news-list">
                     <div className="news-list-item news-list__item" onClick={(e) => {
-                        openFire()
+                        openPoll()
                     }}>
                         <img src="https://www.2do2go.ru/uploads/ceed1ea18da1b30325280a8824b4cd79.jpg"
                              className="news-list-item__photo"/>
@@ -30,7 +30,7 @@ export class EventsComponent extends Component {
                     </div>
 
                     <div className="news-list-item news-list__item" onClick={() => {
-                        openFire()
+                        openPoll()
                     }}>
                         <img src="https://metalheadzone.com/wp-content/uploads/2016/11/metallica-quiz.jpg"
                              className="news-list-item__photo"/>
@@ -43,7 +43,7 @@ export class EventsComponent extends Component {
                     </div>
 
                     <div className="news-list-item news-list__item" onClick={() => {
-                        openFire()
+                        openPoll()
                     }}>
                         <img
                             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsZ_ES_Gwn6jQzIPrADUtMhtMjfs0oLrOKs84fY0NoM01tGOk6"
@@ -60,7 +60,7 @@ export class EventsComponent extends Component {
                     </div>
 
                     <div className="news-list-item news-list__item" onClick={() => {
-                        openFire()
+                        openPoll()
                     }}>
                         <img src="https://www.luzhniki.ru/uploads/event/image/285/small_slide_top2.jpg"
                              className="news-list-item__photo"/>

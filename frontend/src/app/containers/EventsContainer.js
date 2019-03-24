@@ -17,8 +17,8 @@ class EventsContainer extends Component {
         const {dispatch} = this.props
 
         return (<EventsComponent actions={{
-            openFire: bindActionCreators(() => ({
-                type: ActionTypes.OPEN_FIRE,
+            openPoll: bindActionCreators(() => ({
+                type: ActionTypes.OPEN_POLL,
             }), dispatch)
         }}/>)
     }
