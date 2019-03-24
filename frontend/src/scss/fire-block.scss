@@ -12,6 +12,17 @@
   }
 }
 
+@keyframes roundFire {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  25% {
+    transform: translateX(-50%) scale(1.5);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+}
 
 .fire-block {
   margin-top: 25px;
@@ -44,5 +55,33 @@
     left: 0;
     opacity: 0;
     transition: opacity .5s linear;
+  }
+
+  &__round-fire {
+    display: block;
+    position: absolute;
+    background: url(../img/fire_bg.png);
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    transition: transform .5s linear;
+
+    &:after {
+      content: '';
+      width: 200px;
+      height: 200px;
+      display: block;
+      border-radius: 360px;
+      background: linear-gradient(114deg, #f15922, #ed1d24);
+      opacity: .3;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }

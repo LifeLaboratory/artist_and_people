@@ -8,6 +8,7 @@ import FireContainer from "../containers/FireContainer";
 import ChartsContainer from "../containers/ChartsContainer";
 import EventsContainer from "../containers/EventsContainer";
 import PollContainer from "../containers/PollContainer";
+import ArtistPanelContainer from "../containers/ArtistPanelContainer";
 
 const NoMatch = () => <h2>404 (Not found)</h2>
 
@@ -22,6 +23,8 @@ const AppRouter = ({history}) => (
                 <Route path="/charts" exact component={ChartsContainer}/>
                 <Route path="/login" exact component={LoginContainer}/>
                 <Route path="/poll" exact component={PollContainer}/>
+                <Route path="/artist_panel" exact component={ArtistPanelContainer}/>
+
 
                 <Redirect exact from="/" to="/login"/>
 
