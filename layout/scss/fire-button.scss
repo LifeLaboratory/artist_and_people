@@ -3,7 +3,6 @@
 .fire-button {
   width: 220px;
   height: 220px;
-  left: -1px;
   border-radius: 50%;
   background: linear-gradient(114deg, #f15922 , #ed1d24);
   position: relative;
@@ -27,8 +26,6 @@
     position: absolute;
     bottom: 20px;
     width: 100%;
-    -moz-user-select: none;
-    -khtml-user-select: none;
     user-select: none;
   }
 }

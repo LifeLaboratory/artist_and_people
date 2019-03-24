@@ -2,7 +2,9 @@ var rating = 0,
     delta = new Date();
 
 var fireElement = document.getElementsByClassName('fire-block__fire')[0],
-    countElement = document.getElementsByClassName('fire-block__count')[0];
+    countElement = document.getElementsByClassName('fire-block__count')[0],
+    roundFire = document.getElementsByClassName('fire-block__round-fire')[0];
+
 
 
 fire.onclick = function () {
@@ -25,10 +27,12 @@ function fireRate() {
     var k = 0.7 * (rating / 10);
     fireElement.style.opacity = k;
 
+    roundFire.style.transform = 'translateX(-50%) scale(' + (1 + k*3 ) + ')';
+
     if (k > 0.8) {
         countElement.classList.add('fire');
     } else {
-        countElement.classList.remove('fir  e');
+        countElement.classList.remove('fire');
     }
 }
 

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="scss/main.css">
+
+</head>
+<body>
+
+<header class="header">
+    <div class="header__buttons-container">
+        <div class="header__item header__item--back-link"></div>
+        <div class="header__item header__item--user"></div>
+    </div>
+</header>
+
+<div class="content-container">
+    <div class="fire-block ">
+        <!-- <div class="fire-block__title">Red hot chili peppers</div>-->
+
+        <div class="fire-block__count"><span>1325</span></div>
+        <div id="fire" class="fire-button fire-block__button">
+            <div class="fire-button__title">Fire!</div>
+        </div>
+
+        <div class="fire-block__round-fire" data-scale="2"></div>
+
+        <div class="fire-block__fire"></div>
+    </div>
+
+
+
+
+
+    <div class="performance disabled-block">
+        <div class="performance__title">Флешмоб Nyan Cat</div>
+        <div class="performance__visual">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/wZZ7oFKsKzY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p class="performance__description">
+            Современный человек постепенно приобретает определенный «иммунитет» к рекламе, становясь все менее
+            восприимчивым к ее традиционным формам. И чтобы расшевелить покупателей, маркетологам приходится постоянно
+            искать «новые» рекламные подходы к потребительской аудитории. Одной из последних новинок, предлагаемых
+            рекламным рынком, стала организация флэшмобов рекламного характера.
+        </p>
+    </div>
+
+
+
+
+</div>
+
+
+<div class="footer-chart">
+    <div class="footer-chart__title">1000</div>
+    <div class="footer-chart__progress"></div>
+</div>
+
+
+<footer class="footer-menu disabled-block">
+    <div class="footer-menu__item footer-menu__item--text"></div>
+    <div class="footer-menu__item footer-menu__item--video"></div>
+    <div class="footer-menu__item footer-menu__item--fire active"></div>
+    <div class="footer-menu__item footer-menu__item--performance"></div>
+    <div class="footer-menu__item footer-menu__item--emergency"></div>
+</footer>
+
+<script src="js/canvasjs.min.js"></script>
+
+<script src="js/chart.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

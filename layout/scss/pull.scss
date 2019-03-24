@@ -12,6 +12,12 @@
     padding: 30px 25px;
     display: block;
     position: relative;
+    color: #fff;
+
+    &.emodji {
+      font-size: 30px;
+      line-height: 10px;
+    }
 
     label:nth-child(2n) & {
       background-color: #ff5252;
